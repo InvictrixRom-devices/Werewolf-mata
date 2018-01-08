@@ -50,8 +50,10 @@
  * version 1.1.0 provided at http://www.chronox.de/jent.html
  */
 
-#ifdef __OPTIMIZE__
+#ifdef __OPTIMIZE__ 
+#ifndef __clang__
  #error "The CPU Jitter random number generator must not be compiled with optimizations. See documentation. Use the compiler switch -O0 for compiling jitterentropy.c."
+#endif
 #endif
 
 typedef	unsigned long long	__u64;
